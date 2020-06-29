@@ -325,7 +325,8 @@ Partial Class personal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1347, 742)
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ClientSize = New System.Drawing.Size(1347, 632)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.btnsalir)
         Me.Controls.Add(Me.GroupBox1)

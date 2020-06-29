@@ -74,7 +74,7 @@ Partial Class mantenimiento
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.GroupBox1.Location = New System.Drawing.Point(515, 22)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(758, 522)
+        Me.GroupBox1.Size = New System.Drawing.Size(786, 522)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Listado de Equipo"
@@ -210,7 +210,7 @@ Partial Class mantenimiento
         '
         Me.cmbestado.FormattingEnabled = True
         Me.cmbestado.Items.AddRange(New Object() {"Mantenimiento Preventivo ", "Mantenimiento Correctivo"})
-        Me.cmbestado.Location = New System.Drawing.Point(200, 282)
+        Me.cmbestado.Location = New System.Drawing.Point(217, 282)
         Me.cmbestado.Name = "cmbestado"
         Me.cmbestado.Size = New System.Drawing.Size(200, 33)
         Me.cmbestado.TabIndex = 15
@@ -229,42 +229,42 @@ Partial Class mantenimiento
         '
         'dt1
         '
-        Me.dt1.Location = New System.Drawing.Point(200, 328)
+        Me.dt1.Location = New System.Drawing.Point(217, 328)
         Me.dt1.Name = "dt1"
         Me.dt1.Size = New System.Drawing.Size(200, 30)
         Me.dt1.TabIndex = 14
         '
         'txtreparacion
         '
-        Me.txtreparacion.Location = New System.Drawing.Point(200, 363)
+        Me.txtreparacion.Location = New System.Drawing.Point(217, 363)
         Me.txtreparacion.Name = "txtreparacion"
         Me.txtreparacion.Size = New System.Drawing.Size(200, 30)
         Me.txtreparacion.TabIndex = 13
         '
         'txtproblema
         '
-        Me.txtproblema.Location = New System.Drawing.Point(200, 238)
+        Me.txtproblema.Location = New System.Drawing.Point(217, 238)
         Me.txtproblema.Name = "txtproblema"
         Me.txtproblema.Size = New System.Drawing.Size(200, 30)
         Me.txtproblema.TabIndex = 12
         '
         'txtmodelo
         '
-        Me.txtmodelo.Location = New System.Drawing.Point(200, 151)
+        Me.txtmodelo.Location = New System.Drawing.Point(217, 151)
         Me.txtmodelo.Name = "txtmodelo"
         Me.txtmodelo.Size = New System.Drawing.Size(200, 30)
         Me.txtmodelo.TabIndex = 11
         '
         'txtserie
         '
-        Me.txtserie.Location = New System.Drawing.Point(200, 194)
+        Me.txtserie.Location = New System.Drawing.Point(217, 194)
         Me.txtserie.Name = "txtserie"
         Me.txtserie.Size = New System.Drawing.Size(200, 30)
         Me.txtserie.TabIndex = 10
         '
         'txtmarca
         '
-        Me.txtmarca.Location = New System.Drawing.Point(200, 109)
+        Me.txtmarca.Location = New System.Drawing.Point(217, 109)
         Me.txtmarca.Name = "txtmarca"
         Me.txtmarca.Size = New System.Drawing.Size(200, 30)
         Me.txtmarca.TabIndex = 9
@@ -334,7 +334,7 @@ Partial Class mantenimiento
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(200, 55)
+        Me.txtcodigo.Location = New System.Drawing.Point(217, 55)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(200, 30)
         Me.txtcodigo.TabIndex = 1
@@ -368,6 +368,7 @@ Partial Class mantenimiento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ClientSize = New System.Drawing.Size(1418, 634)
         Me.Controls.Add(Me.btnsalir)
         Me.Controls.Add(Me.GroupBox1)

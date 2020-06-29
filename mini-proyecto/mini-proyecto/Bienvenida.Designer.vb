@@ -32,6 +32,7 @@ Partial Class Bienvenida
         Me.TIEMPO = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Progress = New CircularProgressBar.CircularProgressBar()
         Me.Panel.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -43,7 +44,7 @@ Partial Class Bienvenida
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label2.Location = New System.Drawing.Point(374, 187)
+        Me.Label2.Location = New System.Drawing.Point(373, 161)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(294, 47)
@@ -115,12 +116,45 @@ Partial Class Bienvenida
         Me.PictureBox2.TabIndex = 14
         Me.PictureBox2.TabStop = False
         '
+        'Progress
+        '
+        Me.Progress.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner
+        Me.Progress.AnimationSpeed = 500
+        Me.Progress.BackColor = System.Drawing.Color.Transparent
+        Me.Progress.Font = New System.Drawing.Font("Microsoft Sans Serif", 72.0!, System.Drawing.FontStyle.Bold)
+        Me.Progress.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Progress.InnerColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Progress.InnerMargin = 2
+        Me.Progress.InnerWidth = -1
+        Me.Progress.Location = New System.Drawing.Point(495, 237)
+        Me.Progress.MarqueeAnimationSpeed = 2000
+        Me.Progress.Name = "Progress"
+        Me.Progress.OuterColor = System.Drawing.Color.Gray
+        Me.Progress.OuterMargin = -25
+        Me.Progress.OuterWidth = 26
+        Me.Progress.ProgressColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(66, Byte), Integer))
+        Me.Progress.ProgressWidth = 25
+        Me.Progress.SecondaryFont = New System.Drawing.Font("Microsoft Sans Serif", 36.0!)
+        Me.Progress.Size = New System.Drawing.Size(240, 234)
+        Me.Progress.StartAngle = 270
+        Me.Progress.SubscriptColor = System.Drawing.Color.FromArgb(CType(CType(166, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.Progress.SubscriptMargin = New System.Windows.Forms.Padding(10, -35, 0, 0)
+        Me.Progress.SubscriptText = ""
+        Me.Progress.SuperscriptColor = System.Drawing.Color.FromArgb(CType(CType(166, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.Progress.SuperscriptMargin = New System.Windows.Forms.Padding(10, 35, 0, 0)
+        Me.Progress.SuperscriptText = ""
+        Me.Progress.TabIndex = 15
+        Me.Progress.Text = "0%"
+        Me.Progress.TextMargin = New System.Windows.Forms.Padding(8, 8, 0, 0)
+        Me.Progress.Value = 68
+        '
         'Bienvenida
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(66, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(954, 504)
+        Me.Controls.Add(Me.Progress)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label2)
@@ -146,4 +180,5 @@ Partial Class Bienvenida
     Friend WithEvents TIEMPO As Timer
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Progress As CircularProgressBar.CircularProgressBar
 End Class
