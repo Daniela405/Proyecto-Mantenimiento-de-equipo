@@ -199,7 +199,7 @@ Public Class personal
     End Sub
 
     Private Sub btndetalle_Click(sender As Object, e As EventArgs) Handles btndetalle.Click
-
+        reportepersonal.ShowDialog()
     End Sub
 
     Private Sub btndetalle_MouseHover(sender As Object, e As EventArgs) Handles btndetalle.MouseHover
@@ -228,8 +228,15 @@ Public Class personal
         tmensaje.ToolTipTitle = "Salir"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
+    Dim conexion As conexion = New conexion
+    Private Sub mantenimiento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        conexion.conectar()
+        MostrarDatos()
+    End Sub
 
-    Private Sub txtcodigo_TextChanged(sender As Object, e As EventArgs) Handles txtcodigo.TextChanged
+    Public Sub MostrarDatos()
+        conexion.consulta("select * from persona", "persona")
+        DataGridView1.DataSource = conexion.ds.Tables("persona")
 
     End Sub
 End Class

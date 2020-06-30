@@ -197,4 +197,31 @@ Public Class mantenimiento
     Private Sub txtcodigo_TextChanged(sender As Object, e As EventArgs) Handles txtcodigo.TextChanged
 
     End Sub
+    Dim conexion As conexion = New conexion
+    Private Sub mantenimiento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        conexion.conectar()
+        MostrarDatos()
+    End Sub
+
+    Public Sub MostrarDatos()
+        conexion.consulta("select * from pc", "pc")
+        DataGridView1.DataSource = conexion.ds.Tables("pc")
+
+    End Sub
+
+    Private Sub btnagregar_Click(sender As Object, e As EventArgs) Handles btnagregar.Click
+        Dim agregar As String = "insert into pc values (" + txtcodigo.Text + ", '" + txtmarca.Text + "', '" + txtmodelo.Text + "', '" + txtserie.Text + "', '" + txtproblema.Text + "', '" + cmbestado.Text + "')"
+        If (conexion.insertar(agregar)) Then
+            MessageBox.Show("Datos agregados correctamente")
+            MostrarDatos()
+        Else
+            MessageBox.Show("Error al agregar datos")
+        End If
+    End Sub
+
+    Private Sub btndetalle_Click(sender As Object, e As EventArgs) Handles btndetalle.Click
+        eportemantenimiento.ShowDialog()
+
+
+    End Sub
 End Class

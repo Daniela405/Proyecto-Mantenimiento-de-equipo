@@ -89,6 +89,17 @@ Namespace My
                 Me("email") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-HT00A5J\SQLEXPRESS;Initial Catalog=mantenimiento;Integrated S"& _ 
+            "ecurity=True")>  _
+        Public ReadOnly Property mantenimientoConnectionString() As String
+            Get
+                Return CType(Me("mantenimientoConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
