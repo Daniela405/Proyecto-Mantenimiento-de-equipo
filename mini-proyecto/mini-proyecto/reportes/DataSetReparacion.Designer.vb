@@ -718,6 +718,8 @@ Partial Public Class DataSetReparacion
         
         Private columncodigopc As Global.System.Data.DataColumn
         
+        Private columnidempleado1 As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -818,6 +820,14 @@ Partial Public Class DataSetReparacion
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property idempleado1Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnidempleado1
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -854,9 +864,9 @@ Partial Public Class DataSetReparacion
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddpersonaRow(ByVal codigo As Integer, ByVal idempleado As Decimal, ByVal nombre As String, ByVal direccion As String, ByVal edad As Integer, ByVal sexo As String, ByVal puesto As String, ByVal parentpcRowByFK_persona_pc1 As pcRow) As personaRow
+        Public Overloads Function AddpersonaRow(ByVal codigo As Integer, ByVal idempleado As Decimal, ByVal nombre As String, ByVal direccion As String, ByVal edad As Integer, ByVal sexo As String, ByVal puesto As String, ByVal parentpcRowByFK_persona_pc1 As pcRow, ByVal idempleado1 As String) As personaRow
             Dim rowpersonaRow As personaRow = CType(Me.NewRow,personaRow)
-            Dim columnValuesArray() As Object = New Object() {codigo, idempleado, nombre, direccion, edad, sexo, puesto, Nothing}
+            Dim columnValuesArray() As Object = New Object() {codigo, idempleado, nombre, direccion, edad, sexo, puesto, Nothing, idempleado1}
             If (Not (parentpcRowByFK_persona_pc1) Is Nothing) Then
                 columnValuesArray(7) = parentpcRowByFK_persona_pc1(0)
             End If
@@ -896,6 +906,7 @@ Partial Public Class DataSetReparacion
             Me.columnsexo = MyBase.Columns("sexo")
             Me.columnpuesto = MyBase.Columns("puesto")
             Me.columncodigopc = MyBase.Columns("codigopc")
+            Me.columnidempleado1 = MyBase.Columns("idempleado1")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -917,6 +928,8 @@ Partial Public Class DataSetReparacion
             MyBase.Columns.Add(Me.columnpuesto)
             Me.columncodigopc = New Global.System.Data.DataColumn("codigopc", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncodigopc)
+            Me.columnidempleado1 = New Global.System.Data.DataColumn("idempleado1", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnidempleado1)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncodigo}, true))
             Me.columncodigo.AllowDBNull = false
             Me.columncodigo.Unique = true
@@ -931,6 +944,9 @@ Partial Public Class DataSetReparacion
             Me.columnpuesto.AllowDBNull = false
             Me.columnpuesto.MaxLength = 50
             Me.columncodigopc.AllowDBNull = false
+            Me.columnidempleado1.AllowDBNull = false
+            Me.columnidempleado1.Caption = "idempleado"
+            Me.columnidempleado1.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1285,6 +1301,17 @@ Partial Public Class DataSetReparacion
             End Get
             Set
                 Me(Me.tablepersona.codigopcColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property idempleado1() As String
+            Get
+                Return CType(Me(Me.tablepersona.idempleado1Column),String)
+            End Get
+            Set
+                Me(Me.tablepersona.idempleado1Column) = value
             End Set
         End Property
         
@@ -2012,71 +2039,71 @@ Namespace DataSetReparacionTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "persona"
             tableMapping.ColumnMappings.Add("codigo", "codigo")
-            tableMapping.ColumnMappings.Add("idempleado", "idempleado")
             tableMapping.ColumnMappings.Add("nombre", "nombre")
             tableMapping.ColumnMappings.Add("direccion", "direccion")
             tableMapping.ColumnMappings.Add("edad", "edad")
             tableMapping.ColumnMappings.Add("sexo", "sexo")
             tableMapping.ColumnMappings.Add("puesto", "puesto")
             tableMapping.ColumnMappings.Add("codigopc", "codigopc")
+            tableMapping.ColumnMappings.Add("idempleado", "idempleado1")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [persona] WHERE (([codigo] = @Original_codigo) AND ([idempleado] = @O"& _ 
-                "riginal_idempleado) AND ([nombre] = @Original_nombre) AND ([direccion] = @Origin"& _ 
-                "al_direccion) AND ([edad] = @Original_edad) AND ([sexo] = @Original_sexo) AND (["& _ 
-                "puesto] = @Original_puesto) AND ([codigopc] = @Original_codigopc))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [persona] WHERE (([codigo] = @Original_codigo) AND ([nombre] = @Origi"& _ 
+                "nal_nombre) AND ([direccion] = @Original_direccion) AND ([edad] = @Original_edad"& _ 
+                ") AND ([sexo] = @Original_sexo) AND ([puesto] = @Original_puesto) AND ([codigopc"& _ 
+                "] = @Original_codigopc) AND ([idempleado] = @Original_idempleado))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_codigo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "codigo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_idempleado", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "idempleado", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nombre", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nombre", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_direccion", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "direccion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_edad", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "edad", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_sexo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sexo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_puesto", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "puesto", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_codigopc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "codigopc", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_idempleado", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "idempleado", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [persona] ([codigo], [idempleado], [nombre], [direccion], [edad], [se"& _ 
-                "xo], [puesto], [codigopc]) VALUES (@codigo, @idempleado, @nombre, @direccion, @e"& _ 
-                "dad, @sexo, @puesto, @codigopc);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT codigo, idempleado, nombre, direccion, "& _ 
-                "edad, sexo, puesto, codigopc FROM persona WHERE (codigo = @codigo)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [persona] ([codigo], [nombre], [direccion], [edad], [sexo], [puesto],"& _ 
+                " [codigopc], [idempleado]) VALUES (@codigo, @nombre, @direccion, @edad, @sexo, @"& _ 
+                "puesto, @codigopc, @idempleado);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT codigo, nombre, direccion, edad, sexo, "& _ 
+                "puesto, codigopc, idempleado FROM persona WHERE (codigo = @codigo)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@codigo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "codigo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idempleado", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "idempleado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nombre", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nombre", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@direccion", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "direccion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@edad", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "edad", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@sexo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sexo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@puesto", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "puesto", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@codigopc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "codigopc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idempleado", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "idempleado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [persona] SET [codigo] = @codigo, [idempleado] = @idempleado, [nombre] = @"& _ 
-                "nombre, [direccion] = @direccion, [edad] = @edad, [sexo] = @sexo, [puesto] = @pu"& _ 
-                "esto, [codigopc] = @codigopc WHERE (([codigo] = @Original_codigo) AND ([idemplea"& _ 
-                "do] = @Original_idempleado) AND ([nombre] = @Original_nombre) AND ([direccion] ="& _ 
-                " @Original_direccion) AND ([edad] = @Original_edad) AND ([sexo] = @Original_sexo"& _ 
-                ") AND ([puesto] = @Original_puesto) AND ([codigopc] = @Original_codigopc));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SEL"& _ 
-                "ECT codigo, idempleado, nombre, direccion, edad, sexo, puesto, codigopc FROM per"& _ 
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [persona] SET [codigo] = @codigo, [nombre] = @nombre, [direccion] = @direc"& _ 
+                "cion, [edad] = @edad, [sexo] = @sexo, [puesto] = @puesto, [codigopc] = @codigopc"& _ 
+                ", [idempleado] = @idempleado WHERE (([codigo] = @Original_codigo) AND ([nombre] "& _ 
+                "= @Original_nombre) AND ([direccion] = @Original_direccion) AND ([edad] = @Origi"& _ 
+                "nal_edad) AND ([sexo] = @Original_sexo) AND ([puesto] = @Original_puesto) AND (["& _ 
+                "codigopc] = @Original_codigopc) AND ([idempleado] = @Original_idempleado));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SEL"& _ 
+                "ECT codigo, nombre, direccion, edad, sexo, puesto, codigopc, idempleado FROM per"& _ 
                 "sona WHERE (codigo = @codigo)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@codigo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "codigo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idempleado", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "idempleado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nombre", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nombre", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@direccion", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "direccion", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@edad", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "edad", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@sexo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sexo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@puesto", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "puesto", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@codigopc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "codigopc", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idempleado", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "idempleado", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_codigo", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "codigo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_idempleado", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "idempleado", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nombre", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nombre", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_direccion", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "direccion", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_edad", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "edad", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_sexo", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "sexo", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_puesto", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "puesto", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_codigopc", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "codigopc", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_idempleado", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "idempleado", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2092,7 +2119,7 @@ Namespace DataSetReparacionTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT codigo, idempleado, nombre, direccion, edad, sexo, puesto, codigopc"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM "& _ 
+            Me._commandCollection(0).CommandText = "SELECT codigo, nombre, direccion, edad, sexo, puesto, codigopc, idempleado"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM "& _ 
                 "  persona"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
@@ -2153,31 +2180,35 @@ Namespace DataSetReparacionTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_codigo As Integer, ByVal Original_idempleado As Decimal, ByVal Original_nombre As String, ByVal Original_direccion As String, ByVal Original_edad As Integer, ByVal Original_sexo As String, ByVal Original_puesto As String, ByVal Original_codigopc As Integer) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_codigo As Integer, ByVal Original_nombre As String, ByVal Original_direccion As String, ByVal Original_edad As Integer, ByVal Original_sexo As String, ByVal Original_puesto As String, ByVal Original_codigopc As Integer, ByVal Original_idempleado As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_codigo,Integer)
-            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_idempleado,Decimal)
             If (Original_nombre Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_nombre")
             Else
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_nombre,String)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_nombre,String)
             End If
             If (Original_direccion Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_direccion")
             Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_direccion,String)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_direccion,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_edad,Integer)
+            Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_edad,Integer)
             If (Original_sexo Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_sexo")
             Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_sexo,String)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_sexo,String)
             End If
             If (Original_puesto Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_puesto")
             Else
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_puesto,String)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_puesto,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_codigopc,Integer)
+            Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_codigopc,Integer)
+            If (Original_idempleado Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_idempleado")
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_idempleado,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2197,31 +2228,35 @@ Namespace DataSetReparacionTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal codigo As Integer, ByVal idempleado As Decimal, ByVal nombre As String, ByVal direccion As String, ByVal edad As Integer, ByVal sexo As String, ByVal puesto As String, ByVal codigopc As Integer) As Integer
+        Public Overloads Overridable Function Insert(ByVal codigo As Integer, ByVal nombre As String, ByVal direccion As String, ByVal edad As Integer, ByVal sexo As String, ByVal puesto As String, ByVal codigopc As Integer, ByVal idempleado As String) As Integer
             Me.Adapter.InsertCommand.Parameters(0).Value = CType(codigo,Integer)
-            Me.Adapter.InsertCommand.Parameters(1).Value = CType(idempleado,Decimal)
             If (nombre Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("nombre")
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(nombre,String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(nombre,String)
             End If
             If (direccion Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("direccion")
             Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(direccion,String)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(direccion,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(4).Value = CType(edad,Integer)
+            Me.Adapter.InsertCommand.Parameters(3).Value = CType(edad,Integer)
             If (sexo Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("sexo")
             Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(sexo,String)
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(sexo,String)
             End If
             If (puesto Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("puesto")
             Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(puesto,String)
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(puesto,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(7).Value = CType(codigopc,Integer)
+            Me.Adapter.InsertCommand.Parameters(6).Value = CType(codigopc,Integer)
+            If (idempleado Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("idempleado")
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(idempleado,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2243,69 +2278,77 @@ Namespace DataSetReparacionTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update( _
                     ByVal codigo As Integer,  _
-                    ByVal idempleado As Decimal,  _
                     ByVal nombre As String,  _
                     ByVal direccion As String,  _
                     ByVal edad As Integer,  _
                     ByVal sexo As String,  _
                     ByVal puesto As String,  _
                     ByVal codigopc As Integer,  _
+                    ByVal idempleado As String,  _
                     ByVal Original_codigo As Integer,  _
-                    ByVal Original_idempleado As Decimal,  _
                     ByVal Original_nombre As String,  _
                     ByVal Original_direccion As String,  _
                     ByVal Original_edad As Integer,  _
                     ByVal Original_sexo As String,  _
                     ByVal Original_puesto As String,  _
-                    ByVal Original_codigopc As Integer) As Integer
+                    ByVal Original_codigopc As Integer,  _
+                    ByVal Original_idempleado As String) As Integer
             Me.Adapter.UpdateCommand.Parameters(0).Value = CType(codigo,Integer)
-            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(idempleado,Decimal)
             If (nombre Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("nombre")
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(nombre,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(nombre,String)
             End If
             If (direccion Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("direccion")
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(direccion,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(direccion,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(edad,Integer)
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(edad,Integer)
             If (sexo Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("sexo")
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(sexo,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(sexo,String)
             End If
             If (puesto Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("puesto")
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(puesto,String)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(puesto,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(codigopc,Integer)
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(codigopc,Integer)
+            If (idempleado Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("idempleado")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(idempleado,String)
+            End If
             Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_codigo,Integer)
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_idempleado,Decimal)
             If (Original_nombre Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_nombre")
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_nombre,String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_nombre,String)
             End If
             If (Original_direccion Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_direccion")
             Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_direccion,String)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_direccion,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_edad,Integer)
+            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_edad,Integer)
             If (Original_sexo Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_sexo")
             Else
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_sexo,String)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_sexo,String)
             End If
             If (Original_puesto Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_puesto")
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_puesto,String)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_puesto,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_codigopc,Integer)
+            Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_codigopc,Integer)
+            If (Original_idempleado Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("Original_idempleado")
+            Else
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_idempleado,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -2325,8 +2368,8 @@ Namespace DataSetReparacionTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal idempleado As Decimal, ByVal nombre As String, ByVal direccion As String, ByVal edad As Integer, ByVal sexo As String, ByVal puesto As String, ByVal codigopc As Integer, ByVal Original_codigo As Integer, ByVal Original_idempleado As Decimal, ByVal Original_nombre As String, ByVal Original_direccion As String, ByVal Original_edad As Integer, ByVal Original_sexo As String, ByVal Original_puesto As String, ByVal Original_codigopc As Integer) As Integer
-            Return Me.Update(Original_codigo, idempleado, nombre, direccion, edad, sexo, puesto, codigopc, Original_codigo, Original_idempleado, Original_nombre, Original_direccion, Original_edad, Original_sexo, Original_puesto, Original_codigopc)
+        Public Overloads Overridable Function Update(ByVal nombre As String, ByVal direccion As String, ByVal edad As Integer, ByVal sexo As String, ByVal puesto As String, ByVal codigopc As Integer, ByVal idempleado As String, ByVal Original_codigo As Integer, ByVal Original_nombre As String, ByVal Original_direccion As String, ByVal Original_edad As Integer, ByVal Original_sexo As String, ByVal Original_puesto As String, ByVal Original_codigopc As Integer, ByVal Original_idempleado As String) As Integer
+            Return Me.Update(Original_codigo, nombre, direccion, edad, sexo, puesto, codigopc, idempleado, Original_codigo, Original_nombre, Original_direccion, Original_edad, Original_sexo, Original_puesto, Original_codigopc, Original_idempleado)
         End Function
     End Class
     

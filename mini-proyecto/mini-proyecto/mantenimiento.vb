@@ -2,7 +2,7 @@
 Imports System.Data.SqlClient
 
 Public Class mantenimiento
-
+    Dim conexion As conexion = New conexion()
     Private Sub txtcodigo_MouseHover(sender As Object, e As EventArgs) Handles txtcodigo.MouseHover
         tmensaje.SetToolTip(txtcodigo, "Ingrese el codigo de la PC")
         tmensaje.ToolTipTitle = "Codigo"
@@ -88,18 +88,6 @@ Public Class mantenimiento
         tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
 
-    Private Sub btnmodificar_MouseHover(sender As Object, e As EventArgs) Handles btnmodificar.MouseHover
-        tmensaje.SetToolTip(btnmodificar, "Dar click para modificar")
-        tmensaje.ToolTipTitle = "Modificar"
-        tmensaje.ToolTipIcon = ToolTipIcon.Info
-    End Sub
-
-
-    Private Sub btnsalir_MouseHover(sender As Object, e As EventArgs) Handles btnsalir.MouseHover
-        tmensaje.SetToolTip(btnsalir, "Click para salir del Formulario")
-        tmensaje.ToolTipTitle = "Salir"
-        tmensaje.ToolTipIcon = ToolTipIcon.Info
-    End Sub
 
     Private Sub txtcodigo_Validating(sender As Object, e As CancelEventArgs) Handles txtcodigo.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 Then
@@ -189,39 +177,81 @@ Public Class mantenimiento
         End If
     End Sub
 
+    Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
+        Dim actualizar As String = "marca= '" + txtmarca.Text + "' ,modelo='" + txtmodelo.Text + "', serie='" + txtserie.Text + "',problema='" + txtproblema.Text + "',estado='" + cmbestado.Text + "',fechaingreso'" + txtfecha.Text + "',reparacion='" + txtreparacion.Text + "'"
+        Dim sql As String = String.Format("update pc set  marca='{0}', modelo='{1}', serie='{2}', problema='{3}', [estado]='{4}', [fechaingreso]='{5}', 
+[reparacion]='{6}', [codigoempleado]={7} where codigo={8}", txtmarca.Text, txtmodelo.Text, txtserie.Text, txtproblema.Text, cmbestado.SelectedText, DateTimePicker1.Value, txtreparacion.Text, txtcodigoempleado.Text, txtcodigo.Text)
+        If (conexion.actualizar(sql)) Then
+            MessageBox.Show("datos actualizados correctamente")
+            mostrardatos()
+        Else
+            MessageBox.Show("error al actualizar")
+
+        End If
+    End Sub
+
+    Private Sub btnmodificar_MouseHover(sender As Object, e As EventArgs) Handles btnmodificar.MouseHover
+        tmensaje.SetToolTip(btnmodificar, "Click para modificar")
+        tmensaje.ToolTipTitle = "Modificar"
+        tmensaje.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
     Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
         menus.Show()
         Me.Hide()
     End Sub
-
-    Private Sub txtcodigo_TextChanged(sender As Object, e As EventArgs) Handles txtcodigo.TextChanged
-
+    Private Sub btnsalir_MouseHover(sender As Object, e As EventArgs) Handles btnsalir.MouseHover
+        tmensaje.SetToolTip(btnsalir, "Click para salir del formulario ")
+        tmensaje.ToolTipTitle = "Salir"
+        tmensaje.ToolTipIcon = ToolTipIcon.Info
     End Sub
-    Dim conexion As conexion = New conexion
-    Private Sub mantenimiento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    Private Sub personal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion.conectar()
-        MostrarDatos()
-    End Sub
+        mostrardatos()
 
-    Public Sub MostrarDatos()
+    End Sub
+    Public Sub mostrardatos()
         conexion.consulta("select * from pc", "pc")
+
         DataGridView1.DataSource = conexion.ds.Tables("pc")
 
     End Sub
 
-    Private Sub btnagregar_Click(sender As Object, e As EventArgs) Handles btnagregar.Click
-        Dim agregar As String = "insert into pc values (" + txtcodigo.Text + ", '" + txtmarca.Text + "', '" + txtmodelo.Text + "', '" + txtserie.Text + "', '" + txtproblema.Text + "', '" + cmbestado.Text + "')"
-        If (conexion.insertar(agregar)) Then
-            MessageBox.Show("Datos agregados correctamente")
-            MostrarDatos()
+    Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
+        If (conexion.eliminar("pc", "codigo = " + txtcodigo.Text)) Then
+            MessageBox.Show("Registro eliminado correctamente")
+            mostrardatos()
         Else
-            MessageBox.Show("Error al agregar datos")
+            MessageBox.Show("error al eliminar")
+
         End If
     End Sub
 
-    Private Sub btndetalle_Click(sender As Object, e As EventArgs) Handles btndetalle.Click
-        eportemantenimiento.ShowDialog()
+    Private Sub btnagregar_Click(sender As Object, e As EventArgs) Handles btnagregar.Click
 
+        Dim agregar As String = "insert into pc  values ('" + txtcodigo.Text + "','" + txtmarca.Text + "','" + txtmodelo.Text + "','" + txtserie.Text + "','" + txtproblema.Text + "','" + cmbestado.SelectedItem + "','" + txtfecha.Text + "','" + txtreparacion.Text + "')"
+
+        If (conexion.insertar(agregar)) Then
+            MessageBox.Show("Datos Agregados Correctamente")
+            mostrardatos()
+        Else
+            MessageBox.Show("error al agregar")
+
+        End If
 
     End Sub
+
+    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        Dim dgv As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
+        txtcodigo.Text = dgv.Cells(0).Value.ToString()
+        txtmarca.Text = dgv.Cells(1).Value.ToString()
+        txtmodelo.Text = dgv.Cells(2).Value.ToString()
+        txtserie.Text = dgv.Cells(3).Value.ToString()
+        txtproblema.Text = dgv.Cells(4).Value.ToString()
+        cmbestado.Text = dgv.Cells(5).Value.ToString()
+        txtfecha.Text = dgv.Cells(6).Value.ToString()
+        txtreparacion.Text = dgv.Cells(7).Value.ToString()
+    End Sub
+
 End Class

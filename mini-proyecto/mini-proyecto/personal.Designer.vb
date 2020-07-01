@@ -29,6 +29,7 @@ Partial Class personal
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnsalir = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btneliminar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnagregar = New System.Windows.Forms.Button()
         Me.txtcodigopc = New System.Windows.Forms.TextBox()
@@ -59,11 +60,11 @@ Partial Class personal
         '
         'GroupBox2
         '
-        Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.GroupBox2.BackColor = System.Drawing.Color.Gainsboro
         Me.GroupBox2.Controls.Add(Me.btndetalle)
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.GroupBox2.Location = New System.Drawing.Point(536, 23)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(696, 482)
@@ -85,12 +86,11 @@ Partial Class personal
         '
         'DataGridView1
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.DataGridView1.Location = New System.Drawing.Point(40, 98)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
         Me.DataGridView1.Size = New System.Drawing.Size(573, 172)
@@ -110,7 +110,8 @@ Partial Class personal
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.GroupBox1.BackColor = System.Drawing.Color.Gainsboro
+        Me.GroupBox1.Controls.Add(Me.btneliminar)
         Me.GroupBox1.Controls.Add(Me.btnnuevo)
         Me.GroupBox1.Controls.Add(Me.btnagregar)
         Me.GroupBox1.Controls.Add(Me.txtcodigopc)
@@ -132,13 +133,25 @@ Partial Class personal
         Me.GroupBox1.Controls.Add(Me.txtcodigo)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(483, 598)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Ingreso Personal"
+        '
+        'btneliminar
+        '
+        Me.btneliminar.BackColor = System.Drawing.Color.Gray
+        Me.btneliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btneliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btneliminar.Location = New System.Drawing.Point(167, 488)
+        Me.btneliminar.Name = "btneliminar"
+        Me.btneliminar.Size = New System.Drawing.Size(116, 38)
+        Me.btneliminar.TabIndex = 20
+        Me.btneliminar.Text = "Eliminar"
+        Me.btneliminar.UseVisualStyleBackColor = False
         '
         'btnnuevo
         '
@@ -157,7 +170,7 @@ Partial Class personal
         Me.btnagregar.BackColor = System.Drawing.Color.Gray
         Me.btnagregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnagregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnagregar.Location = New System.Drawing.Point(74, 429)
+        Me.btnagregar.Location = New System.Drawing.Point(73, 444)
         Me.btnagregar.Name = "btnagregar"
         Me.btnagregar.Size = New System.Drawing.Size(116, 38)
         Me.btnagregar.TabIndex = 18
@@ -369,4 +382,5 @@ Partial Class personal
     Friend WithEvents Label1 As Label
     Friend WithEvents ErrorValidacion As ErrorProvider
     Friend WithEvents tmensaje As ToolTip
+    Friend WithEvents btneliminar As Button
 End Class
