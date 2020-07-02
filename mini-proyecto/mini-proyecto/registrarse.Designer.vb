@@ -102,7 +102,7 @@ Partial Class registrarse
         Me.btnSalir.Location = New System.Drawing.Point(752, 14)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(38, 32)
-        Me.btnSalir.TabIndex = 95
+        Me.btnSalir.TabIndex = 7
         Me.btnSalir.UseVisualStyleBackColor = False
         '
         'btnMinimizar
@@ -118,7 +118,7 @@ Partial Class registrarse
         Me.btnMinimizar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnMinimizar.Name = "btnMinimizar"
         Me.btnMinimizar.Size = New System.Drawing.Size(36, 32)
-        Me.btnMinimizar.TabIndex = 96
+        Me.btnMinimizar.TabIndex = 8
         Me.btnMinimizar.UseVisualStyleBackColor = True
         '
         'btnRegresar
@@ -137,7 +137,7 @@ Partial Class registrarse
         Me.btnRegresar.Location = New System.Drawing.Point(412, 400)
         Me.btnRegresar.Name = "btnRegresar"
         Me.btnRegresar.Size = New System.Drawing.Size(105, 42)
-        Me.btnRegresar.TabIndex = 94
+        Me.btnRegresar.TabIndex = 6
         Me.btnRegresar.Text = "Regresar"
         Me.btnRegresar.UseVisualStyleBackColor = False
         '
@@ -157,7 +157,7 @@ Partial Class registrarse
         Me.btnContinuar.Location = New System.Drawing.Point(643, 320)
         Me.btnContinuar.Name = "btnContinuar"
         Me.btnContinuar.Size = New System.Drawing.Size(92, 37)
-        Me.btnContinuar.TabIndex = 93
+        Me.btnContinuar.TabIndex = 5
         Me.btnContinuar.Text = "Crear"
         Me.btnContinuar.UseVisualStyleBackColor = False
         '
@@ -313,7 +313,7 @@ Partial Class registrarse
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox4.Size = New System.Drawing.Size(183, 21)
-        Me.TextBox4.TabIndex = 109
+        Me.TextBox4.TabIndex = 4
         '
         'Label11
         '
@@ -342,7 +342,7 @@ Partial Class registrarse
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox3.Size = New System.Drawing.Size(183, 21)
-        Me.TextBox3.TabIndex = 108
+        Me.TextBox3.TabIndex = 3
         '
         'Label10
         '
@@ -370,7 +370,7 @@ Partial Class registrarse
         Me.TextBox2.Location = New System.Drawing.Point(520, 135)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(183, 21)
-        Me.TextBox2.TabIndex = 105
+        Me.TextBox2.TabIndex = 2
         '
         'Label9
         '
@@ -398,7 +398,7 @@ Partial Class registrarse
         Me.TextBox1.Location = New System.Drawing.Point(520, 72)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(183, 21)
-        Me.TextBox1.TabIndex = 104
+        Me.TextBox1.TabIndex = 1
         '
         'Label7
         '

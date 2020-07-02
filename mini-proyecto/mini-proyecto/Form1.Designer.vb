@@ -69,7 +69,7 @@ Partial Class Form1
         Me.Button3.Location = New System.Drawing.Point(800, 24)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(45, 32)
-        Me.Button3.TabIndex = 67
+        Me.Button3.TabIndex = 5
         Me.Button3.UseVisualStyleBackColor = False
         '
         'btnMinimizar
@@ -85,7 +85,7 @@ Partial Class Form1
         Me.btnMinimizar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnMinimizar.Name = "btnMinimizar"
         Me.btnMinimizar.Size = New System.Drawing.Size(44, 32)
-        Me.btnMinimizar.TabIndex = 68
+        Me.btnMinimizar.TabIndex = 6
         Me.btnMinimizar.UseVisualStyleBackColor = True
         '
         'panelLogo
@@ -153,7 +153,7 @@ Partial Class Form1
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox5.Size = New System.Drawing.Size(194, 21)
-        Me.TextBox5.TabIndex = 74
+        Me.TextBox5.TabIndex = 2
         '
         'TextBox6
         '
@@ -164,7 +164,7 @@ Partial Class Form1
         Me.TextBox6.Location = New System.Drawing.Point(521, 100)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(214, 21)
-        Me.TextBox6.TabIndex = 73
+        Me.TextBox6.TabIndex = 1
         '
         'Label2
         '
@@ -201,7 +201,7 @@ Partial Class Form1
         Me.Button1.Location = New System.Drawing.Point(356, 303)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(122, 42)
-        Me.Button1.TabIndex = 77
+        Me.Button1.TabIndex = 3
         Me.Button1.Text = "Registrarse"
         Me.Button1.UseVisualStyleBackColor = False
         '
@@ -230,7 +230,7 @@ Partial Class Form1
         Me.Button4.Location = New System.Drawing.Point(638, 303)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(122, 42)
-        Me.Button4.TabIndex = 75
+        Me.Button4.TabIndex = 4
         Me.Button4.Text = "Continuar"
         Me.Button4.UseVisualStyleBackColor = False
         '

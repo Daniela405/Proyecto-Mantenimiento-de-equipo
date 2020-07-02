@@ -178,7 +178,7 @@ Public Class mantenimiento
     End Sub
 
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
-        Dim actualizar As String = "marca= '" + txtmarca.Text + "' ,modelo='" + txtmodelo.Text + "', serie='" + txtserie.Text + "',problema='" + txtproblema.Text + "',estado='" + cmbestado.Text + "',fechaingreso'" + txtfecha.Text + "',reparacion='" + txtreparacion.Text + "'"
+        Dim actualizar As String = "marca= '" + txtmarca.Text + "' ,modelo='" + txtmodelo.Text + "', serie='" + txtserie.Text + "',problema='" + txtproblema.Text + "',estado='" + cmbestado.Text + "',fechaingreso'" + DateTimePicker1.Value + "',reparacion='" + txtreparacion.Text + "'"
         Dim sql As String = String.Format("update pc set  marca='{0}', modelo='{1}', serie='{2}', problema='{3}', [estado]='{4}', [fechaingreso]='{5}', 
 [reparacion]='{6}', [codigoempleado]={7} where codigo={8}", txtmarca.Text, txtmodelo.Text, txtserie.Text, txtproblema.Text, cmbestado.SelectedText, DateTimePicker1.Value, txtreparacion.Text, txtcodigoempleado.Text, txtcodigo.Text)
         If (conexion.actualizar(sql)) Then
@@ -217,6 +217,10 @@ Public Class mantenimiento
         DataGridView1.DataSource = conexion.ds.Tables("pc")
 
     End Sub
+    Public Sub mostrarnombre(ByVal condicion)
+        conexion.consulta("Select nombre from persona " + "where" + condicion, "persona")
+        txtnombremepleado.Text = conexion.ds.Tables("persona").ToString
+    End Sub
 
     Private Sub btneliminar_Click(sender As Object, e As EventArgs) Handles btneliminar.Click
         If (conexion.eliminar("pc", "codigo = " + txtcodigo.Text)) Then
@@ -230,7 +234,7 @@ Public Class mantenimiento
 
     Private Sub btnagregar_Click(sender As Object, e As EventArgs) Handles btnagregar.Click
 
-        Dim agregar As String = "insert into pc  values ('" + txtcodigo.Text + "','" + txtmarca.Text + "','" + txtmodelo.Text + "','" + txtserie.Text + "','" + txtproblema.Text + "','" + cmbestado.SelectedItem + "','" + txtfecha.Text + "','" + txtreparacion.Text + "')"
+        Dim agregar As String = "insert into pc  values ('" + txtcodigo.Text + "','" + txtmarca.Text + "','" + txtmodelo.Text + "','" + txtserie.Text + "','" + txtproblema.Text + "','" + cmbestado.SelectedItem + "','" + DateTimePicker1.Value + "','" + txtreparacion.Text + "')"
 
         If (conexion.insertar(agregar)) Then
             MessageBox.Show("Datos Agregados Correctamente")
@@ -250,8 +254,33 @@ Public Class mantenimiento
         txtserie.Text = dgv.Cells(3).Value.ToString()
         txtproblema.Text = dgv.Cells(4).Value.ToString()
         cmbestado.Text = dgv.Cells(5).Value.ToString()
-        txtfecha.Text = dgv.Cells(6).Value.ToString()
+        DateTimePicker1.Value = dgv.Cells(6).Value.ToString()
         txtreparacion.Text = dgv.Cells(7).Value.ToString()
+    End Sub
+
+    Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
+        Dim conexion As String
+        conexion = "data source =DESKTOP-HT00A5J \ SQLEXPRESS;initial catalog=mantenimiento;integrated security =true"
+        Dim cn As New SqlConnection
+        cn.ConnectionString = conexion
+        Dim adaptador As New SqlDataAdapter("select * from pc where codigoempleado=" & txtcodigoempleado.Text & " ", cn)
+        Dim ds As New DataSet
+        adaptador.Fill(ds, "datos")
+        If ds.Tables("datos").Rows.Count > 0 Then
+            txtcodigo.Text = ds.Tables("datos").Rows(0).Item(0).ToString
+            txtmarca.Text = ds.Tables("datos").Rows(0).Item(1).ToString
+            txtmodelo.Text = ds.Tables("datos").Rows(0).Item(2).ToString
+            txtserie.Text = ds.Tables("datos").Rows(0).Item(3).ToString
+            txtproblema.Text = ds.Tables("datos").Rows(0).Item(4).ToString
+            cmbestado.Text = ds.Tables("datos").Rows(0).Item(5).ToString
+            DateTimePicker1.Value = ds.Tables("datos").Rows(0).Item(6).ToString
+            txtreparacion.Text = ds.Tables("datos").Rows(0).Item(7).ToString
+            DataGridView1.DataSource = ds.Tables("datos")
+
+            mostrarnombre(txtcodigoempleado.Text)
+        Else
+            MsgBox("Usuario no existe")
+        End If
     End Sub
 
 End Class

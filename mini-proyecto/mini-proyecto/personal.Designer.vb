@@ -162,7 +162,7 @@ Partial Class personal
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(116, 38)
         Me.btnnuevo.TabIndex = 19
-        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.Text = "Limpiar"
         Me.btnnuevo.UseVisualStyleBackColor = False
         '
         'btnagregar
@@ -170,7 +170,7 @@ Partial Class personal
         Me.btnagregar.BackColor = System.Drawing.Color.Gray
         Me.btnagregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnagregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnagregar.Location = New System.Drawing.Point(73, 444)
+        Me.btnagregar.Location = New System.Drawing.Point(67, 429)
         Me.btnagregar.Name = "btnagregar"
         Me.btnagregar.Size = New System.Drawing.Size(116, 38)
         Me.btnagregar.TabIndex = 18

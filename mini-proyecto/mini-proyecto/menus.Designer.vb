@@ -68,7 +68,7 @@ Partial Class menus
         Me.btnSalir.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(46, 42)
-        Me.btnSalir.TabIndex = 58
+        Me.btnSalir.TabIndex = 3
         Me.btnSalir.UseVisualStyleBackColor = True
         '
         'btnExpandir
@@ -84,7 +84,7 @@ Partial Class menus
         Me.btnExpandir.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnExpandir.Name = "btnExpandir"
         Me.btnExpandir.Size = New System.Drawing.Size(46, 42)
-        Me.btnExpandir.TabIndex = 57
+        Me.btnExpandir.TabIndex = 4
         Me.btnExpandir.UseVisualStyleBackColor = True
         '
         'btnMinimizar
@@ -100,7 +100,7 @@ Partial Class menus
         Me.btnMinimizar.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnMinimizar.Name = "btnMinimizar"
         Me.btnMinimizar.Size = New System.Drawing.Size(46, 42)
-        Me.btnMinimizar.TabIndex = 56
+        Me.btnMinimizar.TabIndex = 5
         Me.btnMinimizar.UseVisualStyleBackColor = True
         '
         'btnMaximizar
@@ -131,7 +131,7 @@ Partial Class menus
         Me.btnPC.Location = New System.Drawing.Point(0, 258)
         Me.btnPC.Name = "btnPC"
         Me.btnPC.Size = New System.Drawing.Size(310, 77)
-        Me.btnPC.TabIndex = 5
+        Me.btnPC.TabIndex = 2
         Me.btnPC.Text = "PC"
         Me.btnPC.UseVisualStyleBackColor = True
         '
@@ -159,7 +159,7 @@ Partial Class menus
         Me.btnEmpleado.Location = New System.Drawing.Point(0, 118)
         Me.btnEmpleado.Name = "btnEmpleado"
         Me.btnEmpleado.Size = New System.Drawing.Size(310, 77)
-        Me.btnEmpleado.TabIndex = 3
+        Me.btnEmpleado.TabIndex = 1
         Me.btnEmpleado.Text = "EMPLEADO"
         Me.btnEmpleado.UseVisualStyleBackColor = True
         '

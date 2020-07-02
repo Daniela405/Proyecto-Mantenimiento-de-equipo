@@ -33,6 +33,7 @@ Partial Class mantenimiento
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnagregar = New System.Windows.Forms.Button()
@@ -55,7 +56,6 @@ Partial Class mantenimiento
         Me.btnsalir = New System.Windows.Forms.Button()
         Me.tmensaje = New System.Windows.Forms.ToolTip(Me.components)
         Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -101,7 +101,7 @@ Partial Class mantenimiento
         Me.btndetalle.Location = New System.Drawing.Point(249, 410)
         Me.btndetalle.Name = "btndetalle"
         Me.btndetalle.Size = New System.Drawing.Size(181, 38)
-        Me.btndetalle.TabIndex = 8
+        Me.btndetalle.TabIndex = 14
         Me.btndetalle.Text = "Ver detalle"
         Me.btndetalle.UseVisualStyleBackColor = False
         '
@@ -126,7 +126,7 @@ Partial Class mantenimiento
         Me.txtcodigoempleado.Location = New System.Drawing.Point(268, 45)
         Me.txtcodigoempleado.Name = "txtcodigoempleado"
         Me.txtcodigoempleado.Size = New System.Drawing.Size(122, 30)
-        Me.txtcodigoempleado.TabIndex = 0
+        Me.txtcodigoempleado.TabIndex = 12
         '
         'btnbuscar
         '
@@ -136,7 +136,7 @@ Partial Class mantenimiento
         Me.btnbuscar.Location = New System.Drawing.Point(290, 93)
         Me.btnbuscar.Name = "btnbuscar"
         Me.btnbuscar.Size = New System.Drawing.Size(100, 38)
-        Me.btnbuscar.TabIndex = 5
+        Me.btnbuscar.TabIndex = 13
         Me.btnbuscar.Text = "Buscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
         '
@@ -177,9 +177,16 @@ Partial Class mantenimiento
         Me.GroupBox2.Location = New System.Drawing.Point(16, 21)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(490, 550)
-        Me.GroupBox2.TabIndex = 5
+        Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Ingreso equipo al almacen"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(217, 327)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 30)
+        Me.DateTimePicker1.TabIndex = 6
         '
         'btneliminar
         '
@@ -189,7 +196,7 @@ Partial Class mantenimiento
         Me.btneliminar.Location = New System.Drawing.Point(49, 485)
         Me.btneliminar.Name = "btneliminar"
         Me.btneliminar.Size = New System.Drawing.Size(122, 38)
-        Me.btneliminar.TabIndex = 18
+        Me.btneliminar.TabIndex = 10
         Me.btneliminar.Text = "Eliminar"
         Me.btneliminar.UseVisualStyleBackColor = False
         '
@@ -201,7 +208,7 @@ Partial Class mantenimiento
         Me.btnnuevo.Location = New System.Drawing.Point(245, 434)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(125, 38)
-        Me.btnnuevo.TabIndex = 17
+        Me.btnnuevo.TabIndex = 9
         Me.btnnuevo.Text = "Nuevo"
         Me.btnnuevo.UseVisualStyleBackColor = False
         '
@@ -213,7 +220,7 @@ Partial Class mantenimiento
         Me.btnagregar.Location = New System.Drawing.Point(81, 434)
         Me.btnagregar.Name = "btnagregar"
         Me.btnagregar.Size = New System.Drawing.Size(123, 38)
-        Me.btnagregar.TabIndex = 16
+        Me.btnagregar.TabIndex = 8
         Me.btnagregar.Text = "Agregar"
         Me.btnagregar.UseVisualStyleBackColor = False
         '
@@ -225,7 +232,7 @@ Partial Class mantenimiento
         Me.btnmodificar.Location = New System.Drawing.Point(281, 485)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(125, 38)
-        Me.btnmodificar.TabIndex = 9
+        Me.btnmodificar.TabIndex = 11
         Me.btnmodificar.Text = "Modificar"
         Me.btnmodificar.UseVisualStyleBackColor = False
         '
@@ -360,20 +367,13 @@ Partial Class mantenimiento
         Me.btnsalir.Location = New System.Drawing.Point(1118, 550)
         Me.btnsalir.Name = "btnsalir"
         Me.btnsalir.Size = New System.Drawing.Size(108, 38)
-        Me.btnsalir.TabIndex = 8
+        Me.btnsalir.TabIndex = 15
         Me.btnsalir.Text = "Salir"
         Me.btnsalir.UseVisualStyleBackColor = False
         '
         'ErrorValidacion
         '
         Me.ErrorValidacion.ContainerControl = Me
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(217, 327)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 30)
-        Me.DateTimePicker1.TabIndex = 8
         '
         'mantenimiento
         '
@@ -386,7 +386,6 @@ Partial Class mantenimiento
         Me.Controls.Add(Me.GroupBox2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "mantenimiento"
-        Me.Text = "Mantenimiento"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

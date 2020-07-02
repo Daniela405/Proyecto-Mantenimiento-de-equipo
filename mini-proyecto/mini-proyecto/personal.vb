@@ -197,9 +197,16 @@ Public Class personal
             MessageBox.Show("error al agregar")
 
         End If
+        txtcodigo.Clear()
+        MaskedTextBox1.Clear()
+        txtnombre.Clear()
+        txtdireccion.Clear()
+        txtedad.Clear()
+        txtsexo.Clear()
+        txtpuesto.Clear()
+        txtcodigopc.Clear()
 
-
-
+        btnnuevo.Enabled = True
 
 
     End Sub
@@ -214,10 +221,6 @@ Public Class personal
         tmensaje.SetToolTip(btnnuevo, "Click para un nuevo PC ")
         tmensaje.ToolTipTitle = "Nuevo"
         tmensaje.ToolTipIcon = ToolTipIcon.Info
-    End Sub
-
-    Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
-
     End Sub
 
     Private Sub btnbuscar_MouseHover(sender As Object, e As EventArgs) Handles btnbuscar.MouseHover
@@ -238,14 +241,16 @@ Public Class personal
     End Sub
 
     Private Sub btnmodificar_Click(sender As Object, e As EventArgs) Handles btnmodificar.Click
-        Dim actualizar As String = "idempleado= '" + MaskedTextBox1.Text + "' ,nombre='" + txtnombre.Text + "', direccion='" + txtdireccion.Text + "',edad='" + txtedad.Text + "',sexo='" + txtsexo.Text + "',puesto='" + txtpuesto.Text + "',codigopc='" + txtcodigopc.Text + "'"
-        'If (conexion.actualizar("persona", actualizar, "codigo=" + txtcodigo.Text)) Then
-        '    MessageBox.Show("datos actualizados correctamente")
-        '    mostrardatos()
-        'Else
-        '    MessageBox.Show("error al actualizar")
+        Dim actualizar As String = "idempleado= '" + MaskedTextBox1.Text + "' ,nombre='" + txtnombre.Text + "', direccion='" + txtdireccion.Text + "',edad='" + txtedad.Text + "',sexo='" + txtsexo.Text + "',puesto'" + txtpuesto.Text + "',codigopc='" + txtcodigopc.Text + "'"
+        Dim sql As String = String.Format("update persona set  idempleado='{0}', nombre='{1}', direccion='{2}', edad='{3}', sexo='{4}', puesto='{5}', 
+codigopc='{6}' where codigo={7}", MaskedTextBox1.Text, txtnombre.Text, txtdireccion.Text, txtedad.Text, txtsexo.Text, txtpuesto.Text, txtcodigopc.Text, txtcodigo.Text)
+        If (conexion.actualizar(sql)) Then
+            MessageBox.Show("datos actualizados correctamente")
+            mostrardatos()
+        Else
+            MessageBox.Show("error al actualizar")
 
-        'End If
+        End If
     End Sub
 
     Private Sub btnmodificar_MouseHover(sender As Object, e As EventArgs) Handles btnmodificar.MouseHover
@@ -255,7 +260,8 @@ Public Class personal
     End Sub
 
     Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
-
+        menus.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnsalir_MouseHover(sender As Object, e As EventArgs) Handles btnsalir.MouseHover
@@ -284,9 +290,9 @@ Public Class personal
 
     End Sub
     Public Sub mostrardatos()
-        conexion.consulta("select * from persona", "persona")
+        conexion.consulta("select * from persona ", " persona ")
 
-        DataGridView1.DataSource = conexion.ds.Tables("persona")
+        DataGridView1.DataSource = conexion.ds.Tables(" persona ")
 
     End Sub
 
@@ -297,6 +303,46 @@ Public Class personal
         Else
             MessageBox.Show("error al eliminar")
 
+        End If
+        txtcodigo.Clear()
+        MaskedTextBox1.Clear()
+        txtnombre.Clear()
+        txtdireccion.Clear()
+        txtedad.Clear()
+        txtsexo.Clear()
+        txtpuesto.Clear()
+        txtcodigopc.Clear()
+    End Sub
+
+    Private Sub btnnuevo_Click(sender As Object, e As EventArgs) Handles btnnuevo.Click
+        txtcodigo.Clear()
+        MaskedTextBox1.Clear()
+        txtnombre.Clear()
+        txtdireccion.Clear()
+        txtedad.Clear()
+        txtsexo.Clear()
+        txtpuesto.Clear()
+        txtcodigopc.Clear()
+    End Sub
+
+    Private Sub btnbuscar_Click(sender As Object, e As EventArgs) Handles btnbuscar.Click
+        Dim conexion As String
+        conexion = "data source =DESKTOP-HT00A5J \ SQLEXPRESS;initial catalog=mantenimiento;integrated security =true"
+        Dim cn As New SqlConnection
+        cn.ConnectionString = conexion
+        Dim adaptador As New SqlDataAdapter("select * from persona where codigo=" & txtcodigo.Text & " ", cn)
+        Dim ds As New DataSet
+        adaptador.Fill(ds, "datos")
+        If ds.Tables("datos").Rows.Count > 0 Then
+            MaskedTextBox1.Text = ds.Tables("datos").Rows(0).Item(1).ToString
+            txtnombre.Text = ds.Tables("datos").Rows(0).Item(2).ToString
+            txtdireccion.Text = ds.Tables("datos").Rows(0).Item(3).ToString
+            txtedad.Text = ds.Tables("datos").Rows(0).Item(4).ToString
+            txtsexo.Text = ds.Tables("datos").Rows(0).Item(5).ToString
+            txtpuesto.Text = ds.Tables("datos").Rows(0).Item(6).ToString
+            txtcodigopc.Text = ds.Tables("datos").Rows(0).Item(7).ToString
+        Else
+            MsgBox("Usuario no existe")
         End If
     End Sub
 End Class
