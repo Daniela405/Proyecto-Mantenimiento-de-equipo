@@ -152,21 +152,21 @@
     <Compile Include="registrarse.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="reportes\DataSetReparacion.Designer.vb">
+    <Compile Include="Reportes\DataSistema.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetReparacion.xsd</DependentUpon>
+      <DependentUpon>DataSistema.xsd</DependentUpon>
     </Compile>
-    <Compile Include="reportes\reportemantenimiento.Designer.vb">
+    <Compile Include="Reportes\reportemantenimiento.Designer.vb">
       <DependentUpon>reportemantenimiento.vb</DependentUpon>
     </Compile>
-    <Compile Include="reportes\reportemantenimiento.vb">
+    <Compile Include="Reportes\reportemantenimiento.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="reportes\reportepersonal.Designer.vb">
-      <DependentUpon>reportepersonal.vb</DependentUpon>
+    <Compile Include="Reportes\reporteperso.Designer.vb">
+      <DependentUpon>reporteperso.vb</DependentUpon>
     </Compile>
-    <Compile Include="reportes\reportepersonal.vb">
+    <Compile Include="Reportes\reporteperso.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -195,14 +195,14 @@
     <EmbeddedResource Include="registrarse.resx">
       <DependentUpon>registrarse.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="reportes\reportemantenimiento.resx">
+    <EmbeddedResource Include="Reportes\ReporteMantenimiento.rdlc" />
+    <EmbeddedResource Include="Reportes\reportemantenimiento.resx">
       <DependentUpon>reportemantenimiento.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="reportes\reportepersonal.resx">
-      <DependentUpon>reportepersonal.vb</DependentUpon>
+    <EmbeddedResource Include="Reportes\reporteperso.resx">
+      <DependentUpon>reporteperso.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="reportes\ReportMantenimiento.rdlc" />
-    <EmbeddedResource Include="reportes\Reportpersonal.rdlc" />
+    <EmbeddedResource Include="Reportes\ReportePersonal.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -216,16 +216,16 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="reportes\DataSetReparacion.xsc">
-      <DependentUpon>DataSetReparacion.xsd</DependentUpon>
+    <None Include="Reportes\DataSistema.xsc">
+      <DependentUpon>DataSistema.xsd</DependentUpon>
     </None>
-    <None Include="reportes\DataSetReparacion.xsd">
+    <None Include="Reportes\DataSistema.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetReparacion.Designer.vb</LastGenOutput>
+      <LastGenOutput>DataSistema.Designer.vb</LastGenOutput>
     </None>
-    <None Include="reportes\DataSetReparacion.xss">
-      <DependentUpon>DataSetReparacion.xsd</DependentUpon>
+    <None Include="Reportes\DataSistema.xss">
+      <DependentUpon>DataSistema.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

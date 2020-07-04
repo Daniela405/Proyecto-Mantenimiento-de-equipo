@@ -25,5 +25,7 @@
         TIEMPO.Start() 'Iniciamos el temporizador 1'
     End Sub
 
+    Private Sub Progress_Click(sender As Object, e As EventArgs) Handles Progress.Click
 
+    End Sub
 End Class

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class eportemantenimiento
+Partial Class reportemantenimiento
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -24,52 +24,52 @@ Partial Class eportemantenimiento
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(eportemantenimiento))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(reportemantenimiento))
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DataSetReparacion = New mini_proyecto.DataSetReparacion()
+        Me.DataSistema = New mini_proyecto.DataSistema()
         Me.pcBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.pcTableAdapter = New mini_proyecto.DataSetReparacionTableAdapters.pcTableAdapter()
-        CType(Me.DataSetReparacion, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pcTableAdapter = New mini_proyecto.DataSistemaTableAdapters.pcTableAdapter()
+        CType(Me.DataSistema, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ReportViewer1
         '
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource1.Name = "DsMantenimiento"
+        ReportDataSource1.Name = "DataSet1"
         ReportDataSource1.Value = Me.pcBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "mini_proyecto.ReportMantenimiento.rdlc"
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "mini_proyecto.ReporteMantenimiento.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(966, 450)
+        Me.ReportViewer1.Size = New System.Drawing.Size(800, 450)
         Me.ReportViewer1.TabIndex = 0
         '
-        'DataSetReparacion
+        'DataSistema
         '
-        Me.DataSetReparacion.DataSetName = "DataSetReparacion"
-        Me.DataSetReparacion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.DataSistema.DataSetName = "DataSistema"
+        Me.DataSistema.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'pcBindingSource
         '
         Me.pcBindingSource.DataMember = "pc"
-        Me.pcBindingSource.DataSource = Me.DataSetReparacion
+        Me.pcBindingSource.DataSource = Me.DataSistema
         '
         'pcTableAdapter
         '
         Me.pcTableAdapter.ClearBeforeFill = True
         '
-        'eportemantenimiento
+        'reportemantenimiento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(966, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "eportemantenimiento"
+        Me.Name = "reportemantenimiento"
         Me.Text = "Reporte Mantenimiento"
-        CType(Me.DataSetReparacion, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSistema, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -77,6 +77,6 @@ Partial Class eportemantenimiento
 
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents pcBindingSource As BindingSource
-    Friend WithEvents DataSetReparacion As DataSetReparacion
-    Friend WithEvents pcTableAdapter As DataSetReparacionTableAdapters.pcTableAdapter
+    Friend WithEvents DataSistema As DataSistema
+    Friend WithEvents pcTableAdapter As DataSistemaTableAdapters.pcTableAdapter
 End Class

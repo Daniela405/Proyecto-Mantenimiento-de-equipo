@@ -186,27 +186,31 @@ Public Class personal
     End Sub
 
     Private Sub btnagregar_Click(sender As Object, e As EventArgs) Handles btnagregar.Click
+        Try
+            Dim agregar As String = "insert into persona  values ('" + txtcodigo.Text + "','" + MaskedTextBox1.Text + "','" + txtnombre.Text + "','" + txtdireccion.Text + "','" + txtedad.Text + "','" + txtsexo.Text + "','" + txtpuesto.Text + "','" + txtcodigopc.Text + "')"
+
+            If (conexion.insertar(agregar)) Then
+                MessageBox.Show("Datos Agregados Correctamente")
+                mostrardatos()
+            Else
+                MessageBox.Show("error ")
+
+            End If
+            txtcodigo.Clear()
+            MaskedTextBox1.Clear()
+            txtnombre.Clear()
+            txtdireccion.Clear()
+            txtedad.Clear()
+            txtsexo.Clear()
+            txtpuesto.Clear()
+            txtcodigopc.Clear()
+        Catch ex As Exception
+            MessageBox.Show("Registro ya existente")
+        End Try
 
 
-        Dim agregar As String = "insert into persona  values ('" + txtcodigo.Text + "','" + MaskedTextBox1.Text + "','" + txtnombre.Text + "','" + txtdireccion.Text + "','" + txtedad.Text + "','" + txtsexo.Text + "','" + txtpuesto.Text + "','" + txtcodigopc.Text + "')"
 
-        If (conexion.insertar(agregar)) Then
-            MessageBox.Show("Datos Agregados Correctamente")
-            mostrardatos()
-        Else
-            MessageBox.Show("error al agregar")
 
-        End If
-        txtcodigo.Clear()
-        MaskedTextBox1.Clear()
-        txtnombre.Clear()
-        txtdireccion.Clear()
-        txtedad.Clear()
-        txtsexo.Clear()
-        txtpuesto.Clear()
-        txtcodigopc.Clear()
-
-        btnnuevo.Enabled = True
 
 
     End Sub
@@ -230,7 +234,7 @@ Public Class personal
     End Sub
 
     Private Sub btndetalle_Click(sender As Object, e As EventArgs) Handles btndetalle.Click
-        reportepersonal.ShowDialog()
+        reporteperso.ShowDialog()
 
     End Sub
 
@@ -260,8 +264,13 @@ codigopc='{6}' where codigo={7}", MaskedTextBox1.Text, txtnombre.Text, txtdirecc
     End Sub
 
     Private Sub btnsalir_Click(sender As Object, e As EventArgs) Handles btnsalir.Click
-        menus.Show()
-        Me.Hide()
+        Dim opcion As DialogResult
+        opcion = MessageBox.Show("¿Desea finalizar?", "SALIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If (opcion = DialogResult.Yes) Then
+            menus.Show()
+            Me.Hide()
+        End If
+
     End Sub
 
     Private Sub btnsalir_MouseHover(sender As Object, e As EventArgs) Handles btnsalir.MouseHover
@@ -345,4 +354,11 @@ codigopc='{6}' where codigo={7}", MaskedTextBox1.Text, txtnombre.Text, txtdirecc
             MsgBox("Usuario no existe")
         End If
     End Sub
+
+    Private Sub btneliminar_MouseHover(sender As Object, e As EventArgs) Handles btneliminar.MouseHover
+        tmensaje.SetToolTip(btneliminar, "Click para eliminar registro")
+        tmensaje.ToolTipTitle = "Eliminar"
+        tmensaje.ToolTipIcon = ToolTipIcon.Info
+    End Sub
+
 End Class

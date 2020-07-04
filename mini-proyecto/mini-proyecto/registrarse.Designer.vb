@@ -267,7 +267,7 @@ Partial Class registrarse
         'picturDesbloquear
         '
         Me.picturDesbloquear.Image = CType(resources.GetObject("picturDesbloquear.Image"), System.Drawing.Image)
-        Me.picturDesbloquear.Location = New System.Drawing.Point(733, 270)
+        Me.picturDesbloquear.Location = New System.Drawing.Point(734, 270)
         Me.picturDesbloquear.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.picturDesbloquear.Name = "picturDesbloquear"
         Me.picturDesbloquear.Size = New System.Drawing.Size(30, 31)
@@ -446,6 +446,7 @@ Partial Class registrarse
         Me.Controls.Add(Me.panelLogo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "registrarse"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "registrarse"
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

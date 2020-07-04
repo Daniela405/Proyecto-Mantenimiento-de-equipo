@@ -30,7 +30,7 @@
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.27611cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -39,7 +39,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox3">
+                    <Textbox Name="Textbox4">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -49,6 +49,7 @@
                               <Value>Código</Value>
                               <Style>
                                 <FontStyle>Italic</FontStyle>
+                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -58,7 +59,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -74,7 +75,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox5">
+                    <Textbox Name="Textbox6">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -84,6 +85,7 @@
                               <Value>Marca</Value>
                               <Style>
                                 <FontStyle>Italic</FontStyle>
+                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -93,7 +95,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -109,7 +111,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox9">
+                    <Textbox Name="Textbox10">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -119,6 +121,7 @@
                               <Value>Modelo</Value>
                               <Style>
                                 <FontStyle>Italic</FontStyle>
+                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -128,7 +131,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox9</rd:DefaultName>
+                      <rd:DefaultName>Textbox10</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -144,7 +147,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox11">
+                    <Textbox Name="Textbox12">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -154,6 +157,7 @@
                               <Value>Serie</Value>
                               <Style>
                                 <FontStyle>Italic</FontStyle>
+                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -163,7 +167,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <rd:DefaultName>Textbox12</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -179,7 +183,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox13">
+                    <Textbox Name="Textbox14">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -189,6 +193,7 @@
                               <Value>Problema</Value>
                               <Style>
                                 <FontStyle>Italic</FontStyle>
+                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -198,7 +203,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox13</rd:DefaultName>
+                      <rd:DefaultName>Textbox14</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -214,7 +219,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox15">
+                    <Textbox Name="Textbox16">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -224,6 +229,7 @@
                               <Value>Estado</Value>
                               <Style>
                                 <FontStyle>Italic</FontStyle>
+                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -233,7 +239,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox15</rd:DefaultName>
+                      <rd:DefaultName>Textbox16</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -249,7 +255,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox17">
+                    <Textbox Name="Textbox18">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -259,6 +265,7 @@
                               <Value>Fecha Ingreso</Value>
                               <Style>
                                 <FontStyle>Italic</FontStyle>
+                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -268,7 +275,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox17</rd:DefaultName>
+                      <rd:DefaultName>Textbox18</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -284,7 +291,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox19">
+                    <Textbox Name="Textbox20">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -294,6 +301,7 @@
                               <Value>Reparación</Value>
                               <Style>
                                 <FontStyle>Italic</FontStyle>
+                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -303,7 +311,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox19</rd:DefaultName>
+                      <rd:DefaultName>Textbox20</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -319,7 +327,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox7">
+                    <Textbox Name="Textbox8">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -329,6 +337,7 @@
                               <Value>Código Empleado</Value>
                               <Style>
                                 <FontStyle>Italic</FontStyle>
+                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -338,7 +347,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox7</rd:DefaultName>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -654,11 +663,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DsMantenimiento</DataSetName>
-        <Top>0.17639cm</Top>
-        <Left>0.635cm</Left>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.19333cm</Top>
+        <Left>0.17037cm</Left>
         <Height>1.2cm</Height>
-        <Width>22.5cm</Width>
+        <Width>23.27611cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -666,13 +675,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.63889in</Height>
+    <Height>0.64583in</Height>
     <Style />
   </Body>
-  <Width>9.35827in</Width>
+  <Width>9.35081in</Width>
   <Page>
     <PageHeader>
-      <Height>3.49842cm</Height>
+      <Height>3.05787cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -683,7 +692,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Globals!ExecutionTime</Value>
+                  <Value>= Globals!ExecutionTime</Value>
                   <Style>
                     <FontStyle>Italic</FontStyle>
                     <FontSize>20pt</FontSize>
@@ -695,10 +704,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.71712cm</Top>
-          <Left>16.12759cm</Left>
-          <Height>0.94686cm</Height>
-          <Width>6.76769cm</Width>
+          <Top>1.24037cm</Top>
+          <Left>15.52787cm</Left>
+          <Height>1.02333cm</Height>
+          <Width>4.6425cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -709,17 +718,17 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="Textbox21">
+        <Textbox Name="Textbox2">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte Mantenimiento de PC</Value>
+                  <Value>Reporte Mantenimiento</Value>
                   <Style>
                     <FontStyle>Italic</FontStyle>
-                    <FontSize>20pt</FontSize>
+                    <FontSize>25pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -729,11 +738,11 @@
               </Style>
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox21</rd:DefaultName>
-          <Top>0.89351cm</Top>
-          <Left>7.00828cm</Left>
-          <Height>1.8288cm</Height>
-          <Width>8.00333cm</Width>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>0.49953cm</Top>
+          <Left>8.04898cm</Left>
+          <Height>2.06403cm</Height>
+          <Width>6.69806cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -749,10 +758,9 @@
           <Source>Embedded</Source>
           <Value>ID85527841af5e4fcbdbece5bdcda160c5</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.25851cm</Top>
-          <Left>1.57551cm</Left>
-          <Height>2.91111cm</Height>
-          <Width>3.53033cm</Width>
+          <Left>3.85092cm</Left>
+          <Height>2.80528cm</Height>
+          <Width>2.92875cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -772,14 +780,14 @@
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox2">
+        <Textbox Name="Textbox3">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=" Pagina " &amp; Globals!PageNumber &amp; " de " &amp; globals!TotalPages</Value>
+                  <Value>=" Pagina " &amp; Globals!PageNumber &amp; " de " &amp; Globals!TotalPages</Value>
                   <Style>
                     <FontStyle>Italic</FontStyle>
                     <FontSize>20pt</FontSize>
@@ -787,16 +795,14 @@
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
+              <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.92287cm</Top>
-          <Left>6.44384cm</Left>
-          <Height>1.04097cm</Height>
-          <Width>8.56778cm</Width>
+          <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>0.58139cm</Top>
+          <Left>7.39634cm</Left>
+          <Height>1.02333cm</Height>
+          <Width>9.25569cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -825,18 +831,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DataSetReparacion">
+    <DataSource Name="DataSistema">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>d41ba03a-6c6f-4c79-ad1c-dc65e918979b</rd:DataSourceID>
+      <rd:DataSourceID>a5c1a663-00bf-421f-be2b-c6df4b79a049</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DsMantenimiento">
+    <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>DataSetReparacion</DataSourceName>
+        <DataSourceName>DataSistema</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -866,7 +872,7 @@
         </Field>
         <Field Name="fechaingreso">
           <DataField>fechaingreso</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="reparacion">
           <DataField>reparacion</DataField>
@@ -878,8 +884,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DataSetReparacion</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Daniela\source\repos\Proyecto-Mantenimiento-de-equipo\mini-proyecto\mini-proyecto\reportes\DataSetReparacion.xsd</rd:SchemaPath>
+        <rd:DataSetName>DataSistema</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Daniela\source\repos\Proyecto-Mantenimiento-de-equipo\mini-proyecto\mini-proyecto\Reportes\DataSistema.xsd</rd:SchemaPath>
         <rd:TableName>pc</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -963,5 +969,5 @@ gPYeH44afE40W6bxjqdQR4tfogTcHe6S6iIk4RCjief85ZuoqMyh5LVrw8Le6OHPqCX9/cAfUdGiEMOE
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>f50e5382-3e4f-4534-aba0-95c3d607768a</rd:ReportID>
+  <rd:ReportID>aac1d2e4-eef6-4571-8da0-6052792ebef2</rd:ReportID>
 </Report>

@@ -231,6 +231,7 @@ Partial Class menus
         Me.Controls.Add(Me.panelMenu)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "menus"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "menus"
         Me.panelEncabezado.ResumeLayout(False)
         Me.panelMenu.ResumeLayout(False)

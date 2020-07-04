@@ -33,7 +33,9 @@ Partial Class mantenimiento
         Me.btnbuscar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.txtcodi = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.mskFecha = New System.Windows.Forms.MaskedTextBox()
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.btnnuevo = New System.Windows.Forms.Button()
         Me.btnagregar = New System.Windows.Forms.Button()
@@ -86,11 +88,11 @@ Partial Class mantenimiento
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.GridColor = System.Drawing.Color.Black
-        Me.DataGridView1.Location = New System.Drawing.Point(49, 169)
+        Me.DataGridView1.Location = New System.Drawing.Point(6, 167)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(635, 172)
+        Me.DataGridView1.Size = New System.Drawing.Size(765, 172)
         Me.DataGridView1.TabIndex = 9
         '
         'btndetalle
@@ -98,7 +100,7 @@ Partial Class mantenimiento
         Me.btndetalle.BackColor = System.Drawing.Color.Gray
         Me.btndetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btndetalle.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btndetalle.Location = New System.Drawing.Point(249, 410)
+        Me.btndetalle.Location = New System.Drawing.Point(299, 367)
         Me.btndetalle.Name = "btndetalle"
         Me.btndetalle.Size = New System.Drawing.Size(181, 38)
         Me.btndetalle.TabIndex = 14
@@ -107,15 +109,16 @@ Partial Class mantenimiento
         '
         'txtnombremepleado
         '
-        Me.txtnombremepleado.Location = New System.Drawing.Point(619, 45)
+        Me.txtnombremepleado.Enabled = False
+        Me.txtnombremepleado.Location = New System.Drawing.Point(598, 48)
         Me.txtnombremepleado.Name = "txtnombremepleado"
-        Me.txtnombremepleado.Size = New System.Drawing.Size(122, 30)
+        Me.txtnombremepleado.Size = New System.Drawing.Size(144, 30)
         Me.txtnombremepleado.TabIndex = 4
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(407, 48)
+        Me.Label2.Location = New System.Drawing.Point(395, 51)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(189, 25)
         Me.Label2.TabIndex = 3
@@ -123,9 +126,9 @@ Partial Class mantenimiento
         '
         'txtcodigoempleado
         '
-        Me.txtcodigoempleado.Location = New System.Drawing.Point(268, 45)
+        Me.txtcodigoempleado.Location = New System.Drawing.Point(218, 48)
         Me.txtcodigoempleado.Name = "txtcodigoempleado"
-        Me.txtcodigoempleado.Size = New System.Drawing.Size(122, 30)
+        Me.txtcodigoempleado.Size = New System.Drawing.Size(177, 30)
         Me.txtcodigoempleado.TabIndex = 12
         '
         'btnbuscar
@@ -133,9 +136,9 @@ Partial Class mantenimiento
         Me.btnbuscar.BackColor = System.Drawing.Color.Gray
         Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnbuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnbuscar.Location = New System.Drawing.Point(290, 93)
+        Me.btnbuscar.Location = New System.Drawing.Point(268, 100)
         Me.btnbuscar.Name = "btnbuscar"
-        Me.btnbuscar.Size = New System.Drawing.Size(100, 38)
+        Me.btnbuscar.Size = New System.Drawing.Size(140, 38)
         Me.btnbuscar.TabIndex = 13
         Me.btnbuscar.Text = "Buscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
@@ -143,7 +146,7 @@ Partial Class mantenimiento
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(68, 48)
+        Me.Label1.Location = New System.Drawing.Point(22, 48)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(183, 25)
         Me.Label1.TabIndex = 1
@@ -152,7 +155,9 @@ Partial Class mantenimiento
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Gainsboro
-        Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox2.Controls.Add(Me.txtcodi)
+        Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Controls.Add(Me.mskFecha)
         Me.GroupBox2.Controls.Add(Me.btneliminar)
         Me.GroupBox2.Controls.Add(Me.btnnuevo)
         Me.GroupBox2.Controls.Add(Me.btnagregar)
@@ -176,24 +181,42 @@ Partial Class mantenimiento
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.GroupBox2.Location = New System.Drawing.Point(16, 21)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(490, 550)
+        Me.GroupBox2.Size = New System.Drawing.Size(490, 674)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Ingreso equipo al almacen"
         '
-        'DateTimePicker1
+        'txtcodi
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(217, 327)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 30)
-        Me.DateTimePicker1.TabIndex = 6
+        Me.txtcodi.Location = New System.Drawing.Point(199, 393)
+        Me.txtcodi.Name = "txtcodi"
+        Me.txtcodi.Size = New System.Drawing.Size(224, 30)
+        Me.txtcodi.TabIndex = 12
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(3, 398)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(183, 25)
+        Me.Label11.TabIndex = 13
+        Me.Label11.Text = "Código Empleado"
+        '
+        'mskFecha
+        '
+        Me.mskFecha.Location = New System.Drawing.Point(197, 310)
+        Me.mskFecha.Mask = "00/00/0000"
+        Me.mskFecha.Name = "mskFecha"
+        Me.mskFecha.Size = New System.Drawing.Size(224, 30)
+        Me.mskFecha.TabIndex = 6
+        Me.mskFecha.ValidatingType = GetType(Date)
         '
         'btneliminar
         '
         Me.btneliminar.BackColor = System.Drawing.Color.Gray
         Me.btneliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btneliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btneliminar.Location = New System.Drawing.Point(49, 485)
+        Me.btneliminar.Location = New System.Drawing.Point(41, 529)
         Me.btneliminar.Name = "btneliminar"
         Me.btneliminar.Size = New System.Drawing.Size(122, 38)
         Me.btneliminar.TabIndex = 10
@@ -205,11 +228,11 @@ Partial Class mantenimiento
         Me.btnnuevo.BackColor = System.Drawing.Color.Gray
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnnuevo.Location = New System.Drawing.Point(245, 434)
+        Me.btnnuevo.Location = New System.Drawing.Point(237, 478)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(125, 38)
         Me.btnnuevo.TabIndex = 9
-        Me.btnnuevo.Text = "Nuevo"
+        Me.btnnuevo.Text = "Limpiar"
         Me.btnnuevo.UseVisualStyleBackColor = False
         '
         'btnagregar
@@ -217,7 +240,7 @@ Partial Class mantenimiento
         Me.btnagregar.BackColor = System.Drawing.Color.Gray
         Me.btnagregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnagregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnagregar.Location = New System.Drawing.Point(81, 434)
+        Me.btnagregar.Location = New System.Drawing.Point(73, 478)
         Me.btnagregar.Name = "btnagregar"
         Me.btnagregar.Size = New System.Drawing.Size(123, 38)
         Me.btnagregar.TabIndex = 8
@@ -229,7 +252,7 @@ Partial Class mantenimiento
         Me.btnmodificar.BackColor = System.Drawing.Color.Gray
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnmodificar.Location = New System.Drawing.Point(281, 485)
+        Me.btnmodificar.Location = New System.Drawing.Point(273, 529)
         Me.btnmodificar.Name = "btnmodificar"
         Me.btnmodificar.Size = New System.Drawing.Size(125, 38)
         Me.btnmodificar.TabIndex = 11
@@ -240,50 +263,50 @@ Partial Class mantenimiento
         '
         Me.cmbestado.FormattingEnabled = True
         Me.cmbestado.Items.AddRange(New Object() {"Mantenimiento Preventivo ", "Mantenimiento Correctivo"})
-        Me.cmbestado.Location = New System.Drawing.Point(217, 282)
+        Me.cmbestado.Location = New System.Drawing.Point(197, 266)
         Me.cmbestado.Name = "cmbestado"
-        Me.cmbestado.Size = New System.Drawing.Size(200, 33)
+        Me.cmbestado.Size = New System.Drawing.Size(224, 33)
         Me.cmbestado.TabIndex = 5
         '
         'txtreparacion
         '
-        Me.txtreparacion.Location = New System.Drawing.Point(217, 363)
+        Me.txtreparacion.Location = New System.Drawing.Point(197, 350)
         Me.txtreparacion.Name = "txtreparacion"
-        Me.txtreparacion.Size = New System.Drawing.Size(200, 30)
+        Me.txtreparacion.Size = New System.Drawing.Size(224, 30)
         Me.txtreparacion.TabIndex = 7
         '
         'txtproblema
         '
-        Me.txtproblema.Location = New System.Drawing.Point(217, 238)
+        Me.txtproblema.Location = New System.Drawing.Point(197, 223)
         Me.txtproblema.Name = "txtproblema"
-        Me.txtproblema.Size = New System.Drawing.Size(200, 30)
+        Me.txtproblema.Size = New System.Drawing.Size(224, 30)
         Me.txtproblema.TabIndex = 4
         '
         'txtmodelo
         '
-        Me.txtmodelo.Location = New System.Drawing.Point(217, 151)
+        Me.txtmodelo.Location = New System.Drawing.Point(197, 129)
         Me.txtmodelo.Name = "txtmodelo"
-        Me.txtmodelo.Size = New System.Drawing.Size(200, 30)
+        Me.txtmodelo.Size = New System.Drawing.Size(224, 30)
         Me.txtmodelo.TabIndex = 2
         '
         'txtserie
         '
-        Me.txtserie.Location = New System.Drawing.Point(217, 194)
+        Me.txtserie.Location = New System.Drawing.Point(197, 177)
         Me.txtserie.Name = "txtserie"
-        Me.txtserie.Size = New System.Drawing.Size(200, 30)
+        Me.txtserie.Size = New System.Drawing.Size(224, 30)
         Me.txtserie.TabIndex = 3
         '
         'txtmarca
         '
-        Me.txtmarca.Location = New System.Drawing.Point(217, 109)
+        Me.txtmarca.Location = New System.Drawing.Point(197, 87)
         Me.txtmarca.Name = "txtmarca"
-        Me.txtmarca.Size = New System.Drawing.Size(200, 30)
+        Me.txtmarca.Size = New System.Drawing.Size(224, 30)
         Me.txtmarca.TabIndex = 1
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(44, 369)
+        Me.Label10.Location = New System.Drawing.Point(24, 356)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(121, 25)
         Me.Label10.TabIndex = 8
@@ -292,7 +315,7 @@ Partial Class mantenimiento
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(42, 334)
+        Me.Label9.Location = New System.Drawing.Point(22, 313)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(150, 25)
         Me.Label9.TabIndex = 7
@@ -301,7 +324,7 @@ Partial Class mantenimiento
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(42, 245)
+        Me.Label8.Location = New System.Drawing.Point(22, 232)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(103, 25)
         Me.Label8.TabIndex = 6
@@ -310,7 +333,7 @@ Partial Class mantenimiento
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(44, 289)
+        Me.Label7.Location = New System.Drawing.Point(24, 276)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(79, 25)
         Me.Label7.TabIndex = 5
@@ -319,7 +342,7 @@ Partial Class mantenimiento
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(42, 154)
+        Me.Label6.Location = New System.Drawing.Point(22, 141)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(83, 25)
         Me.Label6.TabIndex = 4
@@ -328,7 +351,7 @@ Partial Class mantenimiento
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(42, 200)
+        Me.Label5.Location = New System.Drawing.Point(22, 187)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(63, 25)
         Me.Label5.TabIndex = 3
@@ -337,7 +360,7 @@ Partial Class mantenimiento
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(42, 112)
+        Me.Label4.Location = New System.Drawing.Point(22, 90)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(72, 25)
         Me.Label4.TabIndex = 2
@@ -345,15 +368,15 @@ Partial Class mantenimiento
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(217, 55)
+        Me.txtcodigo.Location = New System.Drawing.Point(197, 42)
         Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(200, 30)
+        Me.txtcodigo.Size = New System.Drawing.Size(224, 30)
         Me.txtcodigo.TabIndex = 0
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(42, 62)
+        Me.Label3.Location = New System.Drawing.Point(22, 49)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(81, 25)
         Me.Label3.TabIndex = 0
@@ -366,7 +389,7 @@ Partial Class mantenimiento
         Me.btnsalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnsalir.Location = New System.Drawing.Point(1118, 550)
         Me.btnsalir.Name = "btnsalir"
-        Me.btnsalir.Size = New System.Drawing.Size(108, 38)
+        Me.btnsalir.Size = New System.Drawing.Size(130, 38)
         Me.btnsalir.TabIndex = 15
         Me.btnsalir.Text = "Salir"
         Me.btnsalir.UseVisualStyleBackColor = False
@@ -380,12 +403,13 @@ Partial Class mantenimiento
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.ClientSize = New System.Drawing.Size(1418, 634)
+        Me.ClientSize = New System.Drawing.Size(1878, 944)
         Me.Controls.Add(Me.btnsalir)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "mantenimiento"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -427,5 +451,7 @@ Partial Class mantenimiento
     Friend WithEvents ErrorValidacion As ErrorProvider
     Friend WithEvents btneliminar As Button
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents mskFecha As MaskedTextBox
+    Friend WithEvents txtcodi As TextBox
+    Friend WithEvents Label11 As Label
 End Class

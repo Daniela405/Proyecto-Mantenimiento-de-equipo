@@ -65,9 +65,9 @@ Partial Class personal
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GroupBox2.Location = New System.Drawing.Point(536, 23)
+        Me.GroupBox2.Location = New System.Drawing.Point(519, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(696, 482)
+        Me.GroupBox2.Size = New System.Drawing.Size(898, 503)
         Me.GroupBox2.TabIndex = 13
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Listado de Personal"
@@ -77,10 +77,10 @@ Partial Class personal
         Me.btndetalle.BackColor = System.Drawing.Color.Gray
         Me.btndetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btndetalle.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btndetalle.Location = New System.Drawing.Point(310, 295)
+        Me.btndetalle.Location = New System.Drawing.Point(380, 269)
         Me.btndetalle.Name = "btndetalle"
         Me.btndetalle.Size = New System.Drawing.Size(171, 38)
-        Me.btndetalle.TabIndex = 12
+        Me.btndetalle.TabIndex = 15
         Me.btndetalle.Text = "Ver detalle"
         Me.btndetalle.UseVisualStyleBackColor = False
         '
@@ -89,11 +89,11 @@ Partial Class personal
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.DataGridView1.Location = New System.Drawing.Point(40, 98)
+        Me.DataGridView1.Location = New System.Drawing.Point(35, 74)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(573, 172)
+        Me.DataGridView1.Size = New System.Drawing.Size(794, 172)
         Me.DataGridView1.TabIndex = 0
         '
         'btnsalir
@@ -101,9 +101,9 @@ Partial Class personal
         Me.btnsalir.BackColor = System.Drawing.Color.Gray
         Me.btnsalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnsalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnsalir.Location = New System.Drawing.Point(1112, 511)
+        Me.btnsalir.Location = New System.Drawing.Point(313, 482)
         Me.btnsalir.Name = "btnsalir"
-        Me.btnsalir.Size = New System.Drawing.Size(108, 38)
+        Me.btnsalir.Size = New System.Drawing.Size(135, 38)
         Me.btnsalir.TabIndex = 14
         Me.btnsalir.Text = "Salir"
         Me.btnsalir.UseVisualStyleBackColor = False
@@ -112,6 +112,7 @@ Partial Class personal
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Gainsboro
         Me.GroupBox1.Controls.Add(Me.btneliminar)
+        Me.GroupBox1.Controls.Add(Me.btnsalir)
         Me.GroupBox1.Controls.Add(Me.btnnuevo)
         Me.GroupBox1.Controls.Add(Me.btnagregar)
         Me.GroupBox1.Controls.Add(Me.txtcodigopc)
@@ -136,7 +137,7 @@ Partial Class personal
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(483, 598)
+        Me.GroupBox1.Size = New System.Drawing.Size(501, 542)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Ingreso Personal"
@@ -146,10 +147,10 @@ Partial Class personal
         Me.btneliminar.BackColor = System.Drawing.Color.Gray
         Me.btneliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btneliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btneliminar.Location = New System.Drawing.Point(167, 488)
+        Me.btneliminar.Location = New System.Drawing.Point(158, 482)
         Me.btneliminar.Name = "btneliminar"
-        Me.btneliminar.Size = New System.Drawing.Size(116, 38)
-        Me.btneliminar.TabIndex = 20
+        Me.btneliminar.Size = New System.Drawing.Size(135, 38)
+        Me.btneliminar.TabIndex = 13
         Me.btneliminar.Text = "Eliminar"
         Me.btneliminar.UseVisualStyleBackColor = False
         '
@@ -158,10 +159,10 @@ Partial Class personal
         Me.btnnuevo.BackColor = System.Drawing.Color.Gray
         Me.btnnuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnnuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnnuevo.Location = New System.Drawing.Point(212, 429)
+        Me.btnnuevo.Location = New System.Drawing.Point(6, 482)
         Me.btnnuevo.Name = "btnnuevo"
-        Me.btnnuevo.Size = New System.Drawing.Size(116, 38)
-        Me.btnnuevo.TabIndex = 19
+        Me.btnnuevo.Size = New System.Drawing.Size(138, 38)
+        Me.btnnuevo.TabIndex = 12
         Me.btnnuevo.Text = "Limpiar"
         Me.btnnuevo.UseVisualStyleBackColor = False
         '
@@ -170,10 +171,10 @@ Partial Class personal
         Me.btnagregar.BackColor = System.Drawing.Color.Gray
         Me.btnagregar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnagregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnagregar.Location = New System.Drawing.Point(67, 429)
+        Me.btnagregar.Location = New System.Drawing.Point(6, 438)
         Me.btnagregar.Name = "btnagregar"
-        Me.btnagregar.Size = New System.Drawing.Size(116, 38)
-        Me.btnagregar.TabIndex = 18
+        Me.btnagregar.Size = New System.Drawing.Size(138, 38)
+        Me.btnagregar.TabIndex = 9
         Me.btnagregar.Text = "Agregar"
         Me.btnagregar.UseVisualStyleBackColor = False
         '
@@ -181,18 +182,18 @@ Partial Class personal
         '
         Me.txtcodigopc.Location = New System.Drawing.Point(178, 372)
         Me.txtcodigopc.Name = "txtcodigopc"
-        Me.txtcodigopc.Size = New System.Drawing.Size(126, 30)
-        Me.txtcodigopc.TabIndex = 15
+        Me.txtcodigopc.Size = New System.Drawing.Size(185, 30)
+        Me.txtcodigopc.TabIndex = 8
         '
         'btnmodificar
         '
         Me.btnmodificar.BackColor = System.Drawing.Color.Gray
         Me.btnmodificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnmodificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnmodificar.Location = New System.Drawing.Point(289, 488)
+        Me.btnmodificar.Location = New System.Drawing.Point(313, 438)
         Me.btnmodificar.Name = "btnmodificar"
-        Me.btnmodificar.Size = New System.Drawing.Size(108, 38)
-        Me.btnmodificar.TabIndex = 10
+        Me.btnmodificar.Size = New System.Drawing.Size(138, 38)
+        Me.btnmodificar.TabIndex = 11
         Me.btnmodificar.Text = "Modificar"
         Me.btnmodificar.UseVisualStyleBackColor = False
         '
@@ -201,10 +202,10 @@ Partial Class personal
         Me.btnbuscar.BackColor = System.Drawing.Color.Gray
         Me.btnbuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnbuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnbuscar.Location = New System.Drawing.Point(44, 488)
+        Me.btnbuscar.Location = New System.Drawing.Point(158, 438)
         Me.btnbuscar.Name = "btnbuscar"
-        Me.btnbuscar.Size = New System.Drawing.Size(100, 38)
-        Me.btnbuscar.TabIndex = 9
+        Me.btnbuscar.Size = New System.Drawing.Size(138, 38)
+        Me.btnbuscar.TabIndex = 10
         Me.btnbuscar.Text = "Buscar"
         Me.btnbuscar.UseVisualStyleBackColor = False
         '
@@ -212,44 +213,44 @@ Partial Class personal
         '
         Me.txtpuesto.Location = New System.Drawing.Point(178, 328)
         Me.txtpuesto.Name = "txtpuesto"
-        Me.txtpuesto.Size = New System.Drawing.Size(126, 30)
-        Me.txtpuesto.TabIndex = 14
+        Me.txtpuesto.Size = New System.Drawing.Size(185, 30)
+        Me.txtpuesto.TabIndex = 7
         '
         'txtedad
         '
         Me.txtedad.Location = New System.Drawing.Point(178, 246)
         Me.txtedad.Name = "txtedad"
-        Me.txtedad.Size = New System.Drawing.Size(126, 30)
-        Me.txtedad.TabIndex = 13
+        Me.txtedad.Size = New System.Drawing.Size(185, 30)
+        Me.txtedad.TabIndex = 5
         '
         'txtsexo
         '
         Me.txtsexo.Location = New System.Drawing.Point(178, 289)
         Me.txtsexo.Name = "txtsexo"
-        Me.txtsexo.Size = New System.Drawing.Size(126, 30)
-        Me.txtsexo.TabIndex = 12
+        Me.txtsexo.Size = New System.Drawing.Size(185, 30)
+        Me.txtsexo.TabIndex = 6
         '
         'txtdireccion
         '
         Me.txtdireccion.Location = New System.Drawing.Point(178, 198)
         Me.txtdireccion.Name = "txtdireccion"
-        Me.txtdireccion.Size = New System.Drawing.Size(126, 30)
-        Me.txtdireccion.TabIndex = 11
+        Me.txtdireccion.Size = New System.Drawing.Size(185, 30)
+        Me.txtdireccion.TabIndex = 4
         '
         'txtnombre
         '
         Me.txtnombre.Location = New System.Drawing.Point(178, 149)
         Me.txtnombre.Name = "txtnombre"
-        Me.txtnombre.Size = New System.Drawing.Size(126, 30)
-        Me.txtnombre.TabIndex = 10
+        Me.txtnombre.Size = New System.Drawing.Size(185, 30)
+        Me.txtnombre.TabIndex = 3
         '
         'MaskedTextBox1
         '
         Me.MaskedTextBox1.Location = New System.Drawing.Point(178, 108)
         Me.MaskedTextBox1.Mask = "0000-0000-00000"
         Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(126, 30)
-        Me.MaskedTextBox1.TabIndex = 9
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(185, 30)
+        Me.MaskedTextBox1.TabIndex = 2
         '
         'Label8
         '
@@ -318,7 +319,7 @@ Partial Class personal
         '
         Me.txtcodigo.Location = New System.Drawing.Point(178, 58)
         Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(126, 30)
+        Me.txtcodigo.Size = New System.Drawing.Size(185, 30)
         Me.txtcodigo.TabIndex = 1
         '
         'Label1
@@ -339,12 +340,12 @@ Partial Class personal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.ClientSize = New System.Drawing.Size(1347, 632)
+        Me.ClientSize = New System.Drawing.Size(1924, 615)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.btnsalir)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "personal"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Personal"
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
